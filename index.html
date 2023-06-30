@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+
+		<title>Frontend Mentor | Newsletter sign-up form with success message</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<header class="header">
+			<div class="header__boxes">
+				<div class="header__info-box">
+					<h1>Stay updated!</h1>
+					<p class="header__text-under-title">Join 60,000+ product managers receiving monthly updates on:</p>
+					<div class="header__text">
+						<div class="header__text-inline">
+							<img src="./assets/images/icon-list.svg" alt="" />
+							<p>Product discovery and building what matters</p>
+						</div>
+						<div class="header__text-inline">
+							<img src="./assets/images/icon-list.svg" alt="" />
+							<p>Measuring to ensure updates are a success</p>
+						</div>
+						<div class="header__text-inline">
+							<img src="./assets/images/icon-list.svg" alt="" />
+							<p>And much more!</p>
+						</div>
+					</div>
+					<div class="header__mail-box">
+						<div class="header__title-mail">
+							<h4>Email address</h4>
+							<p class="header__error-text">Valid email required</p>
+						</div>
+						<form class="header__form" action="">
+							<label for="email"></label>
+							<input type="email" id="email" placeholder="email@company.com" />
+						</form>
+						<button class="header__btn send-btn">Subscribe to monthly newsletter</button>
+					</div>
+				</div>
+				<div class="header__images">
+					<img class="header__img-mobile" src="./assets/images/illustration-sign-up-mobile.svg" alt="" />
+					<img class="header__img-desktop" src="./assets/images/illustration-sign-up-desktop.svg" alt="" />
+				</div>
+			</div>
+			<div class="header__popup">
+				<div class="header__popup-text">
+					<img class="header__popup-icon" src="./assets/images/icon-success.svg" alt="" />
+					<h4>Thanks for subscribing!</h4>
+					<p>
+						A confirmation email has been sent to <span> ash@loremcompany.com. </span>
+						Please open it and click the button inside to confirm your subscription.
+					</p>
+				</div>
+				<button class="header__btn close-btn">Dismiss message</button>
+			</div>
+			<div class="header__popup-shadow"></div>
+		</header>
+		<script src="js/main.js"></script>
+	</body>
+</html>

@@ -1,0 +1,267 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --Tomato: hsl(4, 100%, 67%);
+  --DarkSlateGrey: hsl(234, 29%, 20%);
+  --CharcoalGrey: hsl(235, 18%, 26%);
+  --Grey: hsl(231, 7%, 60%);
+  --White: hsl(0, 0%, 100%);
+  --fontsize: 16px;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--CharcoalGrey);
+  font-family: "Roboto", sans-serif;
+}
+
+p {
+  font-size: var(--fontsize);
+}
+
+.header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+.header__boxes {
+  display: flex;
+  flex-direction: column-reverse;
+  background-color: var(--White);
+}
+.header__info-box, .header__text-inline {
+  display: flex;
+  text-align: left;
+}
+.header__info-box {
+  flex-direction: column;
+  justify-content: center;
+  padding: 2em;
+  max-width: 375px;
+}
+.header__info-box h1 {
+  margin-top: 1em;
+  font-size: 4rem;
+  text-align: left;
+}
+.header__text-under-title {
+  padding: 1em 0;
+}
+.header__text-inline {
+  display: flex;
+  align-items: flex-start;
+  padding: 1em 0;
+  width: 100%;
+}
+.header__text img {
+  margin-right: 1em;
+  width: 20px;
+}
+.header__mail-box {
+  padding: 3em 0 2em 0;
+  width: 100%;
+}
+.header__title-mail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__error-text {
+  display: none;
+  color: var(--Tomato);
+  font-size: 1rem;
+  font-weight: bold;
+}
+.header__mail-box h4 {
+  font-weight: bold;
+}
+.header__form input {
+  margin: 1em 0;
+  padding: 1em;
+  width: 100%;
+  color: var(--Grey);
+  border: 1px solid var(--Grey);
+  border-radius: 10px;
+}
+.header__form input:focus {
+  outline: none;
+  color: var(--DarkSlateGrey);
+  border: 1px solid var(--DarkSlateGrey);
+}
+.header__input-error input, .header__input-error .header__form input:focus {
+  color: var(--Tomato);
+  border: 1px solid var(--Tomato);
+  background-color: rgba(255, 0, 0, 0.149);
+}
+.header__input-error .header__error-text {
+  display: block;
+}
+.header__btn {
+  margin-top: 1em;
+  padding: 1em;
+  width: 100%;
+  background-color: var(--DarkSlateGrey);
+  color: var(--White);
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.header__img-desktop, .header__img-mobile {
+  width: 100%;
+}
+.header__img-desktop {
+  display: none;
+}
+.header__popup {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  height: 100%;
+  max-width: 375px;
+  transform: scale(0);
+  transition: transform 1s ease-in-out 0.3s;
+  background-color: var(--White);
+  opacity: 0;
+  z-index: 5;
+}
+.header__show-popup {
+  opacity: 1;
+  transform: scale(1);
+}
+.header__popup-icon {
+  padding: 0 1em;
+}
+.header__popup-text h4 {
+  padding: 1em 0;
+  font-size: 4rem;
+}
+.header__popup-text {
+  margin-bottom: 20em;
+  padding: 0 2em;
+}
+.header__popup-text span {
+  font-weight: bold;
+}
+.header__popup .header__btn {
+  position: absolute;
+  left: 5%;
+  bottom: 40px;
+  padding: 1.4em;
+  width: 90%;
+}
+.header__popup-shadow {
+  position: absolute;
+  display: block;
+  width: 150%;
+  height: 150%;
+  background-color: var(--DarkSlateGrey);
+  transform: scale(0);
+  transition: transform 1s;
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 2;
+}
+.header__show-shadow {
+  transform: scale(1);
+  opacity: 1;
+}
+
+@media screen and (min-width: 1200px) {
+  .header p {
+    font-size: 2rem;
+  }
+  .header__boxes {
+    flex-direction: row;
+    padding: 3em;
+    border-radius: 25px;
+  }
+  .header__info-box {
+    padding: 0 5em;
+    max-width: 1200px;
+  }
+  .header__info-box h1 {
+    margin-top: 0;
+    font-size: 6rem;
+    text-align: center;
+  }
+  .header__mail-box {
+    margin-top: 2em;
+  }
+  .header__mail-box h4 {
+    font-size: 1.4rem;
+  }
+  .header__title-mail p {
+    font-size: 1.2rem;
+  }
+  .header__form input {
+    padding: 1em;
+    font-size: 2rem;
+  }
+  .header__img-mobile {
+    display: none;
+  }
+  .header__btn {
+    position: relative;
+    padding: 1.2em 1em;
+    font-size: 1.8rem;
+    z-index: 1;
+  }
+  .header__btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(315deg, #ff6a3a, #ff527b);
+    border-radius: 8px;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    z-index: -1;
+  }
+  .header__btn:hover::before {
+    opacity: 1;
+  }
+  .header__images {
+    width: 50%;
+  }
+  .header__img-desktop {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+  .header__popup {
+    padding: 2em;
+    max-width: 600px;
+    height: 600px;
+    border-radius: 25px;
+  }
+  .header__popup-text h4 {
+    font-size: 6rem;
+  }
+  .header__popup-text p {
+    line-height: 30px;
+  }
+  .header__popup-icon {
+    padding: 0;
+    transform: translate(0%, 60%);
+  }
+  .header__popup .header__btn {
+    bottom: 70px;
+  }
+}/*# sourceMappingURL=style.css.map */
